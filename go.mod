@@ -2,7 +2,10 @@ module github.com/weezqyd/hello-go
 
 go 1.17
 
-require github.com/gofiber/fiber/v2 v2.26.0
+require (
+	github.com/gofiber/fiber/v2 v2.26.0
+	github.com/jackc/pgx/v4 v4.15.0
+)
 
 require (
 	github.com/andybalholm/brotli v1.0.2 // indirect
@@ -13,7 +16,6 @@ require (
 	github.com/jackc/pgproto3/v2 v2.2.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20200714003250-2b9c44734f2b // indirect
 	github.com/jackc/pgtype v1.10.0 // indirect
-	github.com/jackc/pgx/v4 v4.15.0 // indirect
 	github.com/klauspost/compress v1.13.4 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.32.0 // indirect
