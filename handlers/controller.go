@@ -2,13 +2,13 @@ package handlers
 
 import (
 	"context"
+	"database/sql"
 	"github.com/gofiber/fiber/v2"
-	"github.com/jackc/pgx/v4"
 	"time"
 )
 
 type Controller struct {
-	DB *pgx.Conn
+	DB *sql.DB
 }
 
 type Widget struct {
@@ -26,7 +26,7 @@ func (c *Controller) Welcome(ctx *fiber.Ctx) error {
 }
 
 func (c *Controller) Widgets(ctx *fiber.Ctx) error {
-	rows, err := c.DB.Query(
+	rows, err := c.DB.QueryContext(
 		context.Background(),
 		"select id, name, weight, created_at from widgets limit $1",
 		10,
